@@ -19,3 +19,11 @@ This assumes that your Millfork files are in the current directory. For example,
 ```bash
 docker run -v ${PWD}:/code barrywalker/millfork:latest /code/main.mfk -o /code/main.prg
 ```
+
+You can also create an alias to make things much easier:
+
+```bash
+alias millfork='docker run -it -v ${PWD:-.}:/code barrywalker/millfork:latest'
+```
+
+Now, you can run `millfork /code/main.mfk -o /code/main.prg`
